@@ -4,15 +4,17 @@ import orm from 'orm';
 var app = express();
 
 // Mysql connection
-app.use(orm.express("mysql://root:@localhost/my_test	", {
-	// define: function (db, models, next) {
-	// 	models.person = db.define("person", { ... });
-	// 	next();
-	// }
-}));
-// Start server
-var server = app.listen('2122',()=>{
-	console.log('listen request on port 2122');
+orm.connect('mysql://root:@localhost/my_test', function(err, db) {
+  if (err) return console.error('Connection error: ' + err);
 
-	console.log('hello');
-})
+  // connected
+  // ...
+
+  console.log('connected');
+});
+// Start server
+// var server = app.listen('2122',()=>{
+// 	console.log('listen request on port 2122');
+
+// 	console.log('hello');
+// });
