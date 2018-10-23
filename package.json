@@ -1,0 +1,25 @@
+{
+  "name": "node-mysql",
+  "version": "1.0.0",
+  "description": "this test for node and mysql connection ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/index.js --exec babel-node --presets stage-2,env",
+    "build": "babel src -d dist --presets stage-2,env",
+    "serve": "node dist/index.js"
+  },
+  "author": "amir",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql": "^2.16.0",
+    "orm": "^5.0.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "nodemon": "^1.18.4"
+  }
+}
